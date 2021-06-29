@@ -55,7 +55,7 @@ class menu():
         
     def acerca_de():
         
-        boton_acerca = Button(ventana_menu,background="#EC7D36", border="1" , text="Acerca de",font="times 25")
+        boton_acerca = Button(ventana_menu,background="#EC7D36", border="1" , text="Acerca de",font="times 25", command=acerca_de)
         boton_acerca.place(x=350, y=324, width=200, height=40)
         
         
@@ -183,6 +183,46 @@ def configuracion_window():
     
     ventana_configuracion.mainloop()
     
+    
+    
+def acerca_de():
+    
+    ventana_acerca_de = Toplevel()
+    ventana_menu.iconify()
+    
+    ventana_acerca_de.geometry("900x600")
+    ventana_acerca_de.title("Acerca de - FUTOSHIKI ")
+    ventana_acerca_de.config(background="#3A8D38")
+    ventana_acerca_de.resizable(width=False, height=False)
+    
+    
+    titulo = Label(ventana_acerca_de, text = "FUTOSHIKI", font="times 23", bg ="#3A8D38", foreground="#FFF",justify=CENTER)
+    titulo.place(x=325, y=26, width=250,height=48)
+    
+    
+    creacion = Label(ventana_acerca_de, text = "Fecha de creacion: 24-06-2021", font="times 17", bg ="#3A8D38", foreground="#FFF")
+    creacion.place(x=219, y=118, width=460,height=48)
+    
+    autor = Label(ventana_acerca_de, text = "Autor: Joctan Antonio Porras Esquivel", font="times 14", bg ="#3A8D38", foreground="#FFF")
+    autor.place(x=219, y=214, width=460,height=48)
+    
+    def destruir_ventana():
+        ventana_menu.deiconify()
+        ventana_acerca_de.destroy()
+    
+    
+    boton_aceptar_acerca = Button(ventana_acerca_de,text="Aceptar",font="times 16",command=destruir_ventana)
+    boton_aceptar_acerca.place(x=415,y=345,width=70,height=25)
+    
+    
+    
+    
+    
+    ventana_acerca_de.mainloop()
+    
+    
+    
+
     
     
     
