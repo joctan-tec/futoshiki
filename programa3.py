@@ -50,7 +50,7 @@ class menu():
         
     def ayuda():
         
-        boton_ayuda = Button(ventana_menu,background="#EC7D36", border="1" , text="Ayuda",font="times 25")
+        boton_ayuda = Button(ventana_menu,background="#EC7D36", border="1" , text="Ayuda",font="times 25",command=ayuda)
         boton_ayuda.place(x=350, y=276, width=200, height=40)
         
     def acerca_de():
@@ -222,7 +222,16 @@ def acerca_de():
     
     
     
-
+def ayuda():
+    
+    #Abre pdf de
+        
+            
+    import subprocess
+    path = 'manual_de_usuario_juegos_de_bola.pdf'
+    subprocess.Popen([path], shell=True)
+    
+    
     
     
     
